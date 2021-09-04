@@ -5,7 +5,7 @@ const RandomImage = {
   rows: 10,
   
   getRandomSize: () => `${RandomImage.getRandomNumber()}x${RandomImage.getRandomNumber()}`,
-  getRandomNumber: () => Math.floor(Math.random() * 10) + 300,
+  getRandomNumber: () => Math.floor(Math.random() * 20) + 300,
 
   changeRowsLength() {
       RandomImage.rows = RandomImage.input.value
