@@ -1,7 +1,17 @@
 const RandomImage = {
   container: document.querySelector('.container'),
+  input: document.querySelector('#rows'),
   unsplashURL: 'https://source.unsplash.com/random/',
   rows: 10,
+  
+  getRandomSize: () => `${RandomImage.getRandomNumber()}x${RandomImage.getRandomNumber()}`,
+  getRandomNumber: () => Math.floor(Math.random() * 10) + 300,
+
+  changeRowsLength() {
+      RandomImage.rows = RandomImage.input.value
+      RandomImage.container.innerHTML = ''
+      RandomImage.createImages()
+  },
 
   createImages() {
     for(let i = 0; i < RandomImage.rows * 3; i++) {
@@ -11,9 +21,11 @@ const RandomImage = {
       RandomImage.container.appendChild(img)
     }
   },
-  
-  getRandomSize: () => `${RandomImage.getRandomNumber()}x${RandomImage.getRandomNumber()}`,
-  getRandomNumber: () => Math.floor(Math.random() * 10) + 300,
+
+  start() {
+    RandomImage.input.addEventListener('keydown', event => event.key === 'Enter' ? RandomImage.changeRowsLength() : '')
+    RandomImage.createImages()
+  }
 }
 
-RandomImage.createImages()
+RandomImage.start()

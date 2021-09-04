@@ -14,9 +14,42 @@ body {
   justify-content: center;
 }
 
-.title {
-  margin: 10px 0 0;
+.header {
+  margin: 20px 0;
   text-align: center;
+}
+
+.header h1 {
+  margin: 10px;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.input-field label {
+  font-weight: 600;
+}
+
+.input-field input {
+  width: 40px;
+  text-align: center;
+  padding: 6px 8px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.input-field input::-webkit-outer-spin-button,
+.input-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.input-field input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .container {
