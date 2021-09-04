@@ -5,6 +5,7 @@ const rows = 10
 for(let i = 0; i < rows * 3; i++) {
   const img = document.createElement('img')
   img.src = `${unsplashURL}${getRandomSize()}`
+  img.alt = `Image ${i + 1}`
   container.appendChild(img)
 }
 
